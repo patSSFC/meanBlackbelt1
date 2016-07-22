@@ -4,14 +4,13 @@ qaApp.controller('QuestionController', ['$scope', 'questionFactory', function($s
     $scope.formData = {};
     // $scope.questions;
 
-    questionFactory.getAllQuestions(function(data){
-        console.log('getAll in controller');
-        $scope.questions =  data.data;
-        console.log($scope.questions);
-    });
+    // questionFactory.getAllQuestions(function(data){
+    //     console.log('getAll in controller');
+    //     $scope.questions =  data.data;
+    //     console.log($scope.questions);
+    // });
     console.log($scope.questions);
     $scope.onSubmit = function() {
         questionFactory.postNewQuestion($scope.formData);
-        $location.url('/index');
     }
 }]);
