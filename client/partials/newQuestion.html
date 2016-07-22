@@ -1,0 +1,9 @@
+<h1>New Question</h1>
+<form id="newQuestion" action="new_question" method="post">
+    <label for="newQ"></label>
+    <textarea id="newQ" ng-model="formData.body" rows="8" cols="40"></textarea>
+    <label for="descripton"></label>
+    <textarea id='description' ng-model="formData.description" rows="8" cols="40"></textarea>
+</form>
+
+<button type="submit" name="button" ng-click="onSubmit()">Submit!</button>

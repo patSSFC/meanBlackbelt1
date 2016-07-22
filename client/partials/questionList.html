@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <th>
+            Question
+        </th>
+        <th>
+            Answers
+        </th>
+        <th>
+            Actions
+        </th>
+    </thead>
+    <tbody>
+        <tr ng-repeat = 'question in questions'>
+            <td>
+                {{question.body}}
+            </td>
+            <td>
+                {{question.answers}}
+            </td>
+            <td>
+                <button type="button" name="button">show</button>
+                <button type="button" name="button">answer!</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
