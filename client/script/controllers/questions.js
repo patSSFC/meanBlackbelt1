@@ -9,6 +9,7 @@ qaApp.controller('QuestionController', ['$scope', 'questionFactory', function($s
     //     $scope.questions =  data.data;
     //     console.log($scope.questions);
     // });
+    console.log(questionFactory);
     console.log($scope.questions);
     $scope.onSubmit = function() {
         questionFactory.postNewQuestion($scope.formData);
