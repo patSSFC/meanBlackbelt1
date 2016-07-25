@@ -14,7 +14,7 @@ qaApp.factory('questionFactory', function($http) {
     };
 
     factory.postNewQuestion = function(data) {
-        return $http.post('/new_question', data)
+        $http.post('/new_question', data)
             .then(function(returnData) {
                 console.log("the question was posted??");
             });

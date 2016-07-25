@@ -10,5 +10,6 @@ module.exports = function(app){
     app.post('/new_question', function(req, res) {
         console.log('inside POST /new_question route');
         questions.postNew(req, res);
+        // res.send({redirect: '/blog'});
     });
 };

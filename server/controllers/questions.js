@@ -26,11 +26,10 @@ module.exports = {
         question.save(function(err) {
             if(err) {
                 console.log('Something went wrong while trying to add this question: \n\n' + err);
-                
+
             } else {
                 console.log('Question added to DB!');
             }
         });
-        res.redirect('/');
     }
 };

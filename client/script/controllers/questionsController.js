@@ -29,5 +29,6 @@ qaApp.controller('QuestionController', function($location, $scope, questionFacto
     });
     $scope.onSubmit = function() {
         questionFactory.postNewQuestion($scope.formData);
+        $location.path('/list');
     }
 });
