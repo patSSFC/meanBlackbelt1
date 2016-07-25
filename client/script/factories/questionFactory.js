@@ -1,9 +1,10 @@
 qaApp.factory('questionFactory', ['$http', function($http) {
+    console.log('Loaded factory');
     var question;
     var questions = [];
-    var factory = this;
+    var factory = {};
 
-    this.getAllQuestions = function(callback) {
+    factory.getAllQuestions = function(callback) {
         console.log('getAll in factory');
         $http.get('/')
             .then(function(data) {
@@ -11,10 +12,10 @@ qaApp.factory('questionFactory', ['$http', function($http) {
             });
     };
 
-    this.postNewQuestion = function(data) {
+    factory.postNewQuestion = function(data) {
         $http.post('/new_question', data)
             .then(function(returnData) {
-                // res.json();
+                res.json(returnData.data);
             });
     }
     return factory;
