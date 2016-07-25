@@ -9,11 +9,11 @@ qaApp.config(function($routeProvider) {
         .when('/index', {
             templateUrl: '../partials/login.html'
         })
-        .when('/', {
+        .when('/list', {
             templateUrl: '../partials/questionList.html',
             controller: 'QuestionController'
         })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/list'
         });
     });

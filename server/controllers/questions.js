@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Question = mongoose.model('Question');
+console.log("loaded questions controller, server side");
 
 module.exports = {
     getAll: function(req, res) {
@@ -10,13 +11,13 @@ module.exports = {
                 console.log('Error retrieving data');
                 return handleError(err);
             } else {
-                console.log(questions);
+                // console.log("logging questions " + questions);
                 res.status(200).json({data: questions});
             }
         });
     },
     postNew: function(req, res) {
-        console.log('trying to find the data' + req.formData);
+        // console.log('trying to find the data' + req.formData);
         var question = new Question({
             body: req.body.body,
             description: req.body.description
@@ -25,6 +26,7 @@ module.exports = {
         question.save(function(err) {
             if(err) {
                 console.log('Something went wrong while trying to add this question: \n\n' + err);
+                
             } else {
                 console.log('Question added to DB!');
             }

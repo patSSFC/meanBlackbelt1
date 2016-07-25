@@ -11,7 +11,7 @@
         </th>
     </thead>
     <tbody>
-        <tr ng-repeat = 'question in questions'>
+        <tr ng-repeat = 'question in questions track by $index'>
             <td>
                 {{question.body}}
             </td>

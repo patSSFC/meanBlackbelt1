@@ -1,4 +1,4 @@
-qaApp.factory('questionFactory', ['$http', function($http) {
+qaApp.factory('questionFactory', function($http) {
     console.log('Loaded factory');
     var question;
     var questions = [];
@@ -6,17 +6,19 @@ qaApp.factory('questionFactory', ['$http', function($http) {
 
     factory.getAllQuestions = function(callback) {
         console.log('getAll in factory');
-        $http.get('/')
+        $http.get('/list')
             .then(function(data) {
-                callback(data);
+                console.log('something was returned');
+                callback(data.data);
             });
     };
 
     factory.postNewQuestion = function(data) {
-        $http.post('/new_question', data)
+        return $http.post('/new_question', data)
             .then(function(returnData) {
-                res.json(returnData.data);
+                console.log("the question was posted??");
             });
     }
+    console.log("Factory object " + factory);
     return factory;
-}]);
+});
