@@ -3,12 +3,12 @@ var User = mongoose.model('User');
 
 module.exports = {
     create: function(req ,res) {
-        var user = new Quote({name: req.params.name, email: req.params.email});
-        user.save(function(err, user) {
+        var quote = new Quote({name: req.params.name, email: req.params.email});
+        quote.save(function(err, quote) {
             if(err) {
-                console.log('Error while trying to save user');
+                console.log('Error while trying to save quote');
             } else {
-                res.json(user);
+                res.json(quote);
             }
         })
     }
